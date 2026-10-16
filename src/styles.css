@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #12162a;
+  --color-deep: #0c1020;
+  --color-fg: #f3ecdf;
+  --color-muted: #b7b0c6;
+  --color-gold: #e8c27a;
+  --color-dew: #7ed9cf;
+  --color-veil: rgb(12 16 32 / 0.78);
+  --color-line: rgb(232 194 122 / 0.32);
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+  --radius-lg: 1.25rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-deep);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--color-dew);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .vesper-card {
+    background: var(--color-veil);
+    border: 1px solid var(--color-line);
+    box-shadow: 0 18px 50px rgb(0 0 0 / 0.28);
+  }
+
+  .vesper-pad {
+    display: none;
+  }
+
+  .vesper-key {
+    display: grid;
+    min-width: 3.25rem;
+    min-height: 3.25rem;
+    place-items: center;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: rgb(18 22 42 / 0.72);
+    color: var(--color-gold);
+  }
+
+  .vesper-key:active {
+    background: var(--color-gold);
+    color: var(--color-deep);
+  }
+}
+
+.vesper-kicker {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.vesper-hud {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+@media (pointer: coarse) {
+  .vesper-pad {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vesper-card {
+    animation: vesper-in 240ms ease-out;
+  }
+}
+
+@keyframes vesper-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
