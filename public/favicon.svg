@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Vesper">
+  <rect width="32" height="32" rx="7" fill="#12162a"/>
+  <ellipse cx="11.2" cy="15.2" rx="7.2" ry="8.6" fill="#e8c27a"/>
+  <ellipse cx="20.8" cy="15.2" rx="7.2" ry="8.6" fill="#e8c27a"/>
+  <ellipse cx="16" cy="16.4" rx="2.1" ry="7.4" fill="#d5d0e4"/>
+  <circle cx="10.6" cy="14.2" r="2.35" fill="#12162a"/>
+  <circle cx="21.4" cy="14.2" r="2.35" fill="#12162a"/>
+  <circle cx="10.6" cy="14.2" r="0.85" fill="#7ed9cf"/>
+  <circle cx="21.4" cy="14.2" r="0.85" fill="#7ed9cf"/>
+</svg>
